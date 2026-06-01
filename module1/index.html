@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Local Community Event Portal</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#register">Register</a>
+        <a href="#feedback">Feedback</a>
+        <a href="#video">Video</a>
+        <a href="#location">Location</a>
+        <a href="help.html" target="_blank">Help</a>
+    </nav>
+</header>
+
+<main>
+
+<section id="home">
+    <div id="welcomeBanner">
+        <h2>Welcome Resident</h2>
+        <p>
+            Community Event Portal
+            <span style="color:red;font-weight:bold;">
+                Free Registration Available
+            </span>
+        </p>
+    </div>
+
+    <p class="highlight">
+        Register for local community events and activities.
+    </p>
+</section>
+
+<section id="events">
+    <h2>Upcoming Events</h2>
+
+    <div class="card">
+        <h3>Tree Plantation Drive</h3>
+        <p>Date: 15 July 2026</p>
+    </div>
+
+    <div class="card">
+        <h3>Health Awareness Camp</h3>
+        <p>Date: 20 July 2026</p>
+    </div>
+</section>
+
+<section id="gallery">
+
+    <h2>Event Gallery</h2>
+
+    <table>
+
+        <caption>Past Events</caption>
+
+        <tr>
+            <td>
+                <img src="images/event1.jpg"
+                     alt="event1"
+                     title="Tree Plantation"
+                     class="event-image"
+                     ondblclick="enlargeImage(this)">
+                <p>Tree Plantation</p>
+            </td>
+
+            <td>
+                <img src="images/event2.jpg"
+                     alt="event2"
+                     title="Health Camp"
+                     class="event-image"
+                     ondblclick="enlargeImage(this)">
+                <p>Health Camp</p>
+            </td>
+
+            <td>
+                <img src="images/event3.jpg"
+                     alt="event3"
+                     title="Food Drive"
+                     class="event-image"
+                     ondblclick="enlargeImage(this)">
+                <p>Food Drive</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="images/event4.jpg"
+                     alt="event4"
+                     title="Sports Meet"
+                     class="event-image"
+                     ondblclick="enlargeImage(this)">
+                <p>Sports Meet</p>
+            </td>
+
+            <td>
+                <img src="images/event5.jpg"
+                     alt="event5"
+                     title="Festival"
+                     class="event-image"
+                     ondblclick="enlargeImage(this)">
+                <p>Festival</p>
+            </td>
+
+            <td>
+                <img src="images/event6.jpg"
+                     alt="event6"
+                     title="Cleanup Drive"
+                     class="event-image"
+                     ondblclick="enlargeImage(this)">
+                <p>Cleanup Drive</p>
+            </td>
+        </tr>
+
+    </table>
+
+</section>
+
+<section id="register">
+
+    <h2>Event Registration</h2>
+
+    <form onsubmit="submitRegistration(event)">
+
+        <input type="text"
+               id="name"
+               placeholder="Name"
+               required
+               autofocus>
+
+        <input type="email"
+               placeholder="Email"
+               required>
+
+        <input type="date"
+               required>
+
+        <select id="eventType"
+                onchange="showFee();savePreference();"
+                required>
+
+            <option value="">Select Event</option>
+            <option value="Tree Plantation">Tree Plantation</option>
+            <option value="Health Camp">Health Camp</option>
+            <option value="Festival">Festival</option>
+
+        </select>
+
+        <p id="feeDisplay"></p>
+
+        <textarea placeholder="Message"></textarea>
+
+        <button type="submit">
+            Register
+        </button>
+
+        <output id="confirmationMessage"></output>
+
+    </form>
+
+</section>
+
+<section id="feedback">
+
+    <h2>Feedback</h2>
+
+    <input type="text"
+           id="phone"
+           placeholder="Phone Number"
+           onblur="validatePhone()">
+
+    <p id="phoneMessage"></p>
+
+    <textarea id="feedbackText"
+              placeholder="Feedback"
+              onkeyup="countCharacters()"></textarea>
+
+    <p>
+        Characters:
+        <span id="charCount">0</span>
+    </p>
+
+</section>
+
+<section id="video">
+
+    <h2>Event Promo Video</h2>
+
+    <video controls width="500"
+           oncanplay="videoReady()">
+
+        <source src="videos/promo.mp4"
+                type="video/mp4">
+
+    </video>
+
+    <p id="videoMessage"></p>
+
+</section>
+
+<section id="location">
+
+    <h2>Nearby Events</h2>
+
+    <button onclick="findNearbyEvents()">
+        Find Nearby Events
+    </button>
+
+    <p id="locationOutput"></p>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Community Event Portal</p>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
