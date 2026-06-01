@@ -1,0 +1,23 @@
+body{
+    font-family:Arial;
+    margin:20px;
+}
+
+.event-card{
+    border:1px solid gray;
+    padding:15px;
+    margin:10px;
+}
+
+#spinner{
+    color:blue;
+    font-weight:bold;
+}
+
+.error{
+    color:red;
+}
+
+.success{
+    color:green;
+}

@@ -1,0 +1,17 @@
+[
+    {
+        "id":1,
+        "name":"Music Night",
+        "category":"Music",
+        "date":"2026-07-15",
+        "seats":20
+    },
+
+    {
+        "id":2,
+        "name":"Baking Workshop",
+        "category":"Workshop",
+        "date":"2026-07-20",
+        "seats":10
+    }
+]
